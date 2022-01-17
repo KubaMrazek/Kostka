@@ -5,16 +5,28 @@ const result = document.getElementById("result");
 const but = document.getElementById("but");
 let hod = 1;
 let hody = [];
+let timer = false;
 
 
 
 but.addEventListener("click",function(){
-    hod = Math.ceil(Math.random() * 6);
-    hody.push(hod);
-    console.log(hody);
-    cube.src = "img/k" + hod + ".png";   
-    vypis(); 
+    if(!timer) {
+        timer = setInterval(animace, 50);
+        but.innerText = "STOP";
+    } else {
+        clearInterval(timer);
+        timer = false;
+        but.innerText = "HÁZEJ";
+         hody.push(hod);
+        vypis();
+    }
 })
+
+
+function animace() {
+     hod = Math.ceil(Math.random() * 6);
+     cube.src = "img/k" + hod + ".png"; 
+}
 
 function suma() {
     let sum = 0;
