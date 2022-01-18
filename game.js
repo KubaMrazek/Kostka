@@ -11,7 +11,7 @@ let timer = false;
 
 but.addEventListener("click",function(){
     if(!timer) {
-        timer = setInterval(animace, 50);
+        timer = setInterval(animace, 100);
         but.innerText = "STOP";
     } else {
         clearInterval(timer);
@@ -52,10 +52,10 @@ function min() {
 }
 
 function vypis() {
-    result.innerHTML = `<p>Poslední hod: ${hod}</p>`;
-    result.innerHTML += `<p>Počet hodů: ${hody.length}</p>`;
-    result.innerHTML += `<p>Součet: ${suma()}</p>`;
-    result.innerHTML += `<p>Průměr: ${(suma() / hody.length).toFixed(2)}</p>`;
-    result.innerHTML += `<p>Maximum: ${max()}</p>`;
-    result.innerHTML += `<p>Minimum: ${min()}</p>`;
+    result.innerHTML = `<p>Last throw: ${hod}</p>`;
+    result.innerHTML += `<p>Number of throws: ${hody.length}</p>`;
+    result.innerHTML += `<p>Total: ${suma()}</p>`;
+    result.innerHTML += `<p>Average: ${(suma() / hody.length).toFixed(2)}</p>`;
+    result.innerHTML += `<p>Max: ${max()}</p>`;
+    result.innerHTML += `<p>Min: ${min()}</p>`;
 }
